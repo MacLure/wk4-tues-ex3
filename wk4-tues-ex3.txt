@@ -1,0 +1,183 @@
+
+
+PART 1
+___________
+
+1.
+
+Film
+ID
+Title
+Year
+
+Viewer
+ID
+Name
+Age
+
+Viewings
+Film_ID
+Viewer_ID
+
+2.
+
+Worker
+ID
+Name
+Wage
+
+Shift
+ID
+Day
+Time
+
+Worker_Shift
+Worker_ID
+Shift_ID
+
+3.
+
+Chapter
+ID
+Title
+Book_ID
+
+Book
+ID
+Title
+Year
+
+Reader
+ID
+Name
+Age
+
+Author
+ID
+Name
+
+Readings
+Book_ID
+Reader_ID
+
+Author_Book
+Author_ID
+Book_ID
+
+
+PART 2
+___________
+
+
+1.
+
+comic |1 <---> many | issue
+artist |1 <---> many | issue
+artist |1 <---> many | comics
+writer |1 <---> many | issue
+writer |1 <---> many | comics
+
+2.
+
+song |1 <---> many | instrument
+setlist |1 <---> many | song
+tour date |1 <---> 1 | setlist
+
+3.
+gallery |1 <---> many | exhibit
+exhibit |1 <---> many | artwork
+artwork |1 <---> many | artist
+curator |1 <---> many | exhibit
+
+4.
+music piece |1 <---> 1 | sheet music
+sheet music |1 <---> many | instrument
+
+PART 3
+___________
+
+
+1.
+A food delivery app that allows users to place orders for dishes from restaurants.
+
+Restaurant |many <---> 1 | Dish
+Order |many <---> 1 | User
+Order |many <---> 1 | Restaurant
+User |1 <---> many | Order
+Restaurant |1 <---> many | Order
+
+
+Restaurant
+ID, Name
+
+User
+ID, Name
+
+Dish
+ID, Name, Restaurant_ID
+
+Order
+ID, Dish_ID, User_ID
+
+2.
+An app that airlines might use to keep track of the flights they have scheduled and who the passengers and crew are on each flight.
+
+Airline |1 <---> many | Flight
+Flight |1 <---> many | Crew
+Flight |1 <---> many | Passenger
+
+Airline
+ID, Name
+
+Flight
+ID, From, To, Departure_Time, Arrival_Time, Airline_ID
+
+Passenger
+ID, Name, Flight_ID
+
+Crew
+ID, Name, Flight_ID
+
+3.
+A music streaming app that allows artists to post tracks, and for listeners to subscribe to artists.
+
+Artist |1 <---> many | Track
+Listener  |1 <---> many | Subscription
+Subscription
+
+Artist
+ID, Name
+
+Track
+ID, Name, Artist_ID
+
+Listener
+ID, Name
+
+Subscription
+ID, Listener_ID, Artist_ID
+
+
+
+
+STRETCH:
+___________
+
+1.
+
+User (Self-Referential)
+ID, Name
+
+Followings
+Follower_ID, Followee_ID
+
+2.
+
+User (Self-Referential)
+ID, Name
+
+Friendships
+User1_ID, User2_ID, Accepted?
+
+
+
